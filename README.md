@@ -1,4 +1,4 @@
-# DllInjector-c-
+# DllInjector-c++
 c+ DLL injector 
 usage: 1)open cmd
        2) cd /injector folder/
