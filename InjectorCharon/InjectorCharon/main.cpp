@@ -11,7 +11,7 @@ bool GetProcessEntryByName(string name, PROCESSENTRY32* pe) {
         cerr << "Tool helper cannot be created" << endl;
         return false;
     }
-
+//fix this
     if (!Process32First(snapshot, pe)) {
         cerr << "Tool helper cannot retrieve the first entry of process list" << endl;
         return false;
