@@ -17,10 +17,10 @@ bool GetProcessEntryByName(string name, PROCESSENTRY32* pe) {
         return false;
     }
 
-    wstring wideName(name.begin(), name.end());  // Convert name to a wide character string
+    wstring wideName(name.begin(), name.end());
 
     do {
-        if (wcscmp(pe->szExeFile, wideName.c_str()) == 0) {  // Use wcscmp() to compare wide character strings
+        if (wcscmp(pe->szExeFile, wideName.c_str()) == 0) { 
             snapshot ? CloseHandle(snapshot) : 0;
             return true;
         }
@@ -32,7 +32,7 @@ bool GetProcessEntryByName(string name, PROCESSENTRY32* pe) {
 
 int main(int argc, const char* argv[]) {
     PROCESSENTRY32 pe = { sizeof(PROCESSENTRY32) };
-    wstring fullPath; // changed to wstring to match the type of GetFullPathName's second argument
+    wstring fullPath;
 
     if (argc != 3) {
         cerr << "[+] Usage: inject.exe <process name> <dll path>" << endl;
